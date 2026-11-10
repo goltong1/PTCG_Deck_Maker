@@ -1,0 +1,16 @@
+{
+  "name": "ptcg-canvas",
+  "version": "1.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "start": "node dev-server.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check public/app.js && node --check public/core.js && node --test tests/*.test.mjs",
+    "verify:build": "node scripts/verify-build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

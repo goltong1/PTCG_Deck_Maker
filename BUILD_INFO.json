@@ -1,0 +1,16 @@
+{
+  "name": "PTCG Canvas",
+  "packageVersion": "1.1.1",
+  "packagedDate": "2026-11-10",
+  "sourceCommit": "e23758229b4bff84b1de683a9625838cd49e8ad3",
+  "cardDataCommit": "18e0de2feb7a35ebe4296ede0ba6cc768961489b",
+  "cardCount": 20323,
+  "sets": 264,
+  "packagingChanges": [
+    "Updated GitHub Pages workflow",
+    "Created source ZIP during deployment",
+    "Added static deployment asset verification",
+    "Included Korean deployment guide"
+  ],
+  "uiVersion": "1.1.0"
+}
