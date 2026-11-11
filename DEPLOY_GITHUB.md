@@ -1,6 +1,10 @@
 # PTCG Canvas — GitHub Pages 배포
 
-최신 포켓몬 도감 UI가 포함된 v1.1.1 배포 패키지입니다. 카드 데이터가 함께 들어 있어 배포할 때 별도 데이터 API 키나 카드 수집 작업이 필요 없습니다.
+블랙/라이트 UI, 형식별 적법성 검사와 공식 레시피 내보내기가 포함된 v1.2.2 배포 패키지입니다. 카드 데이터가 함께 들어 있어 배포할 때 별도 데이터 API 키나 카드 수집 작업이 필요 없습니다.
+
+## 기존 저장소 업데이트
+
+먼저 [UPGRADE_FROM_OLD_VERSION.md](UPGRADE_FROM_OLD_VERSION.md)를 따르세요. 새로 추가된 파일만 올리면 구버전 코드·데이터가 남습니다. 기존 `package.json`, `public/`, `scripts/`, `tests/`, `.github/`도 모두 덮어쓰고 `RELEASE_MANIFEST.json`을 함께 커밋해야 합니다.
 
 ## 1. 압축 풀기
 
@@ -36,7 +40,7 @@ GitHub 웹 업로드를 쓸 때는 **폴더 내부 항목 전체**를 업로드�
 
 **Actions → Deploy PTCG Canvas to GitHub Pages → Run workflow → main → Run workflow**를 선택합니다.
 
-검사 → 소스 ZIP 생성 → 정적 빌드 → 자산 검사 → Pages 배포가 차례대로 진행됩니다. 작업이 성공하면 실행 결과 또는 Settings → Pages에 나온 주소로 접속하세요. 이후 `main` 브랜치에 push할 때마다 자동으로 갱신됩니다.
+버전 일치 검사 → 기능 테스트 → 소스 ZIP 생성 → 정적 빌드 → 자산 검사 → Pages 배포가 차례대로 진행됩니다. 작업이 성공하면 실행 결과 또는 Settings → Pages에 나온 주소로 접속하세요. 이후 `main` 브랜치에 push할 때마다 자동으로 갱신됩니다.
 
 일반 프로젝트 주소 형식:
 
@@ -75,6 +79,8 @@ Windows에서 `python3` 명령이 없다면 두 번째 줄을 `py -3 scripts/pac
 
 | 증상 | 확인할 곳 |
 | --- | --- |
+| `Mixed or incomplete PTCG Canvas release` | 안내된 파일과 나머지 ZIP 내용을 함께 덮어쓰고 새 커밋을 push. 실패한 옛 실행을 Re-run만 하면 옛 커밋이 실행됨 |
+| 로그에 `ptcg-canvas@1.1.1` 또는 `Missing fixture`가 나옴 | 구버전 package.json/core.js/카드 데이터가 남아 있는지 확인. 전체 교체 절차로 업데이트 |
 | Actions에 워크플로가 안 보임 | 저장소 루트의 `.github/workflows/deploy-pages.yml` 존재 여부와 `main` 브랜치 확인 |
 | Configure GitHub Pages 단계에서 실패 | Settings → Pages의 Source가 GitHub Actions인지 확인 후 재실행 |
 | 카드 데이터가 안 나옴 | `public/data/cards.json`과 `cards.json.gz`가 커밋되어 있는지 확인 |
@@ -83,7 +89,7 @@ Windows에서 `python3` 명령이 없다면 두 번째 줄을 `py -3 scripts/pac
 
 ## 검증 범위와 출처
 
-이 패키지는 로컬에서 테스트 10개, 소스 ZIP 재생성, 빌드와 배포 파일 검사를 통과했습니다. 실제 GitHub 원격 배포는 위 설정과 push 후 실행됩니다.
+이 패키지는 로컬에서 테스트 22개, 소스 ZIP 재생성, 빌드와 배포 파일 검사를 통과했습니다. 실제 GitHub 원격 배포는 위 설정과 push 후 실행됩니다.
 
 데이터 및 이미지 출처·사용 범위는 `README.md`, `DATA_LICENSE.txt`에 정리했습니다. GitHub 설정 및 Actions 구성은 2026-11-10에 아래 공식 문서를 확인했습니다.
 

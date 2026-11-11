@@ -1,16 +1,17 @@
 {
   "name": "PTCG Canvas",
-  "packageVersion": "1.1.1",
-  "packagedDate": "2026-11-10",
-  "sourceCommit": "e23758229b4bff84b1de683a9625838cd49e8ad3",
+  "packageVersion": "1.2.2",
+  "packagedDate": "2026-11-11",
   "cardDataCommit": "18e0de2feb7a35ebe4296ede0ba6cc768961489b",
   "cardCount": 20323,
   "sets": 264,
   "packagingChanges": [
-    "Updated GitHub Pages workflow",
-    "Created source ZIP during deployment",
-    "Added static deployment asset verification",
-    "Included Korean deployment guide"
+    "Reproduced 12 passes and 8 failures by mixing v1.1.1 core/data with format/recipe tests",
+    "Full matched source, enriched card data, recipe templates and tutorial release",
+    "Added release checksums before CI tests, build and ZIP generation",
+    "Added explicit full-overwrite upgrade instructions; preserves existing .git and unrelated files"
   ],
-  "uiVersion": "1.1.0"
+  "uiVersion": "1.2.1",
+  "rulesReviewedAt": "2026-11-11",
+  "baseSourceCommit": "3f907cf742b34d22d18ca262faf6ff3e622d718d"
 }

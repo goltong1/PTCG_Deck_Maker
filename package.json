@@ -1,14 +1,17 @@
 {
   "name": "ptcg-canvas",
-  "version": "1.1.1",
+  "version": "1.2.2",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "node dev-server.mjs",
     "start": "node dev-server.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node --check public/app.js && node --check public/core.js && node --test tests/*.test.mjs",
-    "verify:build": "node scripts/verify-build.mjs"
+    "check": "node scripts/verify-release.mjs && npm run test",
+    "verify:build": "node scripts/verify-build.mjs",
+    "test": "node --check public/app.js && node --check public/core.js && node --check public/rules.js && node --check public/recipe.js && node --check public/tutorial.js && node --test tests/*.test.mjs",
+    "verify:release": "node scripts/verify-release.mjs",
+    "release:manifest": "node scripts/verify-release.mjs --write"
   },
   "engines": {
     "node": ">=22"

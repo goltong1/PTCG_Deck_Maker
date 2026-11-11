@@ -1,10 +1,12 @@
 from pathlib import Path
 import zipfile
+import subprocess
 root=Path(__file__).resolve().parents[1]
+subprocess.run(['node', str(root/'scripts/verify-release.mjs')], cwd=root, check=True)
 out=root/'public/downloads/PTCG_Canvas.zip'
 out.parent.mkdir(parents=True,exist_ok=True)
-allowed_dirs={'.github','public','scripts','tests'}
-allowed_files={'package.json','package-lock.json','README.md','DEPLOY_GITHUB.md','DATA_LICENSE.txt','BUILD_INFO.json','dev-server.mjs','.gitignore','.gitattributes'}
+allowed_dirs={'.github','public','scripts','tests','docs'}
+allowed_files={'package.json','package-lock.json','README.md','DEPLOY_GITHUB.md','UPGRADE_FROM_OLD_VERSION.md','RELEASE_MANIFEST.json','DATA_LICENSE.txt','BUILD_INFO.json','dev-server.mjs','.gitignore','.gitattributes'}
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
  for p in sorted(root.rglob('*')):
   rel=p.relative_to(root)

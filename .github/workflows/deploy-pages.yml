@@ -24,8 +24,10 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
+      - name: Check for mixed or missing release files
+        run: node scripts/verify-release.mjs
       - name: Validate card data and deck logic
-        run: npm run check
+        run: npm run test
       - name: Generate downloadable source ZIP
         run: python3 scripts/package-source.py
       - name: Build static website
