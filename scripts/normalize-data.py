@@ -42,17 +42,11 @@ for p in sorted(src.rglob('*.json')):
  mark=str(c.get('regulation') or '').upper()
  if mark=='NONE':mark=''
  card={'id':ident,'name':name,'group':group,'subtype':sub,'set':c.get('set_name',p.parent.name),'setName':c.get('set_full_name',''),'number':str(c.get('number',p.stem)),'mark':mark,'rarity':c.get('rarity',''),'types':[types.get(t,t) for t in c.get('types_en',c.get('types',[]))],'hp':c.get('hp'), 'stage':stage,'image':web,'originalImage':img,'url':c.get('url',''),'text':text.strip(),'attacks':attacks,'tags':tags,'ace':ace,'basicEnergy':sub=='basic-energy','basic':group=='pokemon' and stage=='기본','retreat':c.get('retreat'), 'artist':', '.join(c.get('author',[]))}
- total=str(c.get('set_total') or '')
- card['series']=re.search(r'/wmimages/([^/]+)/',img).group(1).upper() if '/wmimages/' in img else ''
- card['seriesMark']=total if total.endswith('-P') else card['set']
- card['collectionNumber']=card['number']+('/'+total if total and total!='-1' else '')
- if group=='pokemon':card['ace']=False
- if ident in {'ST2013005017','BS2013005073','BS2013005074'}:card['ace']=True
  cards.append(card)
 # Starter deck reprints can omit rarity: carry ACE identity across the same name and mark.
 ace_keys={(c['name'],c['mark']) for c in cards if c['ace']}
 for c in cards:
- if c['group']!='pokemon' and (c['name'],c['mark']) in ace_keys:c['ace']=True
+ if (c['name'],c['mark']) in ace_keys:c['ace']=True
 # Prefer contemporary prints; use the source's card ID only as an ordering hint.
 def rank(c):
  y=re.search(r'20\d\d',c['id']);return (int(y.group()) if y else 0,c['mark'] if len(c['mark'])==1 else '',c['id'])
