@@ -3,7 +3,7 @@ import zipfile
 root=Path(__file__).resolve().parents[1]
 out=root/'public/downloads/PTCG_Canvas.zip'
 out.parent.mkdir(parents=True,exist_ok=True)
-allowed_dirs={'.github','public','scripts','tests'}
+allowed_dirs={'.github','public','scripts','tests','docs'}
 allowed_files={'package.json','package-lock.json','README.md','DEPLOY_GITHUB.md','DATA_LICENSE.txt','BUILD_INFO.json','dev-server.mjs','.gitignore','.gitattributes'}
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
  for p in sorted(root.rglob('*')):

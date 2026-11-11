@@ -9,7 +9,7 @@ const app = await readFile(path.join(root, 'app.js'), 'utf8');
 const cards = JSON.parse(await readFile(path.join(root, 'data/cards.json'), 'utf8'));
 const compressed = JSON.parse(gunzipSync(await readFile(path.join(root, 'data/cards.json.gz'))));
 assert.deepEqual(compressed, cards, 'Compressed and uncompressed card databases differ');
-const resources = new Set(['index.html', 'app.js', 'core.js', 'styles.css', 'pokemon-theme.css', 'favicon.svg', 'art/pikachu.png', 'data/cards.json', 'data/cards.json.gz', 'data/meta.json', 'data/example.json', 'data-license.txt', 'downloads/PTCG_Canvas.zip']);
+const resources = new Set(['index.html', 'app.js', 'core.js', 'rules.js', 'recipe.js', 'theme-init.js', 'portal-theme.css', 'templates/recipe-template-2026.xlsx', 'templates/recipe-template-2026.json', 'styles.css', 'pokemon-theme.css', 'favicon.svg', 'art/pikachu.png', 'data/cards.json', 'data/cards.json.gz', 'data/meta.json', 'data/example.json', 'data-license.txt', 'downloads/PTCG_Canvas.zip']);
 for (const [,ref] of html.matchAll(/(?:src|href)=["']([^"']+)["']/g)) {
   if (/^(?:https?:|data:|#)/.test(ref)) continue;
   assert(!ref.startsWith('/'), `Root-relative URL breaks project Pages: ${ref}`);
