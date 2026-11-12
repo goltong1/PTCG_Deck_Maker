@@ -21,9 +21,17 @@ export function tutorialSteps(language = 'ko', hasCards = false) {
       L('검색창에 한국어 카드 이름, 기술명, 효과의 일부 또는 세트 코드를 입력하세요. 입력할 때마다 결과가 바뀝니다.','Enter a Korean card name, attack, effect text or set code. Results update as you type.'),
       L('단어를 띄어 쓰거나 쉼표로 나누면 모든 단어를 포함하는 카드를 찾습니다. 예: 「리자몽 ex」.','Separate words with spaces or commas to require every term. For example: “리자몽 ex”.')
     ],L('키보드 / 를 누르면 검색창으로 바로 이동합니다.','Press / to focus search.')),
+    step('resize',find,'library','#libraryResizer, .library-head',L('카드 목록 넓게 보기','Make more room for cards'),[
+      L('큰 화면에서는 카드 도감과 덱 사이의 세로 경계선을 좌우로 끌어 보세요. 도감을 넓히면 한 줄에 보이는 카드 수가 늘어납니다.','On a large screen, drag the vertical divider between the catalog and deck. A wider catalog shows more cards per row.'),
+      L('너비는 다음 방문에도 유지됩니다. 경계선을 더블클릭하면 기본 너비로 돌아갑니다. 휴대폰에서는 카드 검색 탭이 화면 전체를 사용합니다.','The width is remembered. Double-click the divider to reset it. On a phone, the Find cards tab uses the full screen.')
+    ],L('경계선에 포커스를 두고 ← / → 키로도 조절할 수 있어요.','Focus the divider and use the left/right arrow keys to resize.')),
+    step('filters',find,'library','[data-action="toggle-filters"]',L('필터·정렬은 필요할 때만','Open filters when you need them'),[
+      L('「필터·정렬」을 누르면 세부 분류·타입·세트·정렬 순서가 펼쳐집니다. 다시 누르면 접혀 카드 공간이 넓어져요.','Filter & sort expands subcategories, types, sets and sorting. Press it again to collapse the panel and make room for cards.'),
+      L('패널을 접어도 선택한 조건은 유지되며 버튼에 적용된 조건 수가 표시됩니다. 「같은 이름 묶기」를 끄면 다른 그림과 판본도 모두 볼 수 있어요.','Your selections remain active when collapsed, with a count on the button. Turn off One per name to see alternate artwork and printings.')
+    ]),
     step('categories',find,'library','.category-tabs',L('카드 종류부터 좁히기','Filter by card category'),[
       L('전체·포켓몬·트레이너스·에너지 버튼으로 큰 분류를 고르세요.','Choose All, Pokémon, Trainers or Energy.'),
-      L('트레이너스를 고르면 아이템·서포트·도구·스타디움, 에너지를 고르면 기본·특수 에너지 버튼이 아래에 나타납니다.','Trainers reveals Item, Supporter, Tool and Stadium. Energy reveals Basic and Special Energy.')
+      L('트레이너스를 고르면 아이템·서포트·도구·스타디움, 에너지를 고르면 기본·특수 에너지 조건을 「필터·정렬」에서 고를 수 있어요.','After choosing Trainers, use Filter & sort for Item, Supporter, Tool or Stadium. Energy offers Basic and Special Energy.')
     ]),
     step('chips',find,'library','.chips',L('세부 조건 버튼 사용하기','Use the quick filter buttons'),[
       L('Pokémon ex, 기본 포켓몬, ACE SPEC처럼 필요한 조건을 버튼 하나로 선택할 수 있어요. 표시되는 조건은 선택한 카드 종류에 따라 달라집니다.','Use quick buttons such as Pokémon ex, Basic Pokémon and ACE SPEC. Available filters depend on the selected category.'),
@@ -37,9 +45,9 @@ export function tutorialSteps(language = 'ko', hasCards = false) {
       L('「모든 세트」 목록에서 확장팩이나 덱 상품을 선택하면 그 세트의 판본만 표시됩니다.','Select an expansion or deck product from All sets to show only that printing’s set.'),
       L('같은 이름의 카드라도 수록 번호·그림·레귤레이션 마크가 다를 수 있어요. 공식 레시피에 넣을 실제 판본을 골라 주세요.','Cards with the same name may have different numbers, art and regulation marks. Choose the printing you will actually submit.')
     ]),
-    step('eligibility',find,'library','.filter-options',L('사용 가능한 카드만 표시','Show eligible cards only'),[
-      L('「사용 가능만」을 켜면 현재 덱 형식에서 사용 가능으로 확인된 카드만 남습니다. 확인이 필요한 카드는 제외됩니다.','Eligible only keeps cards confirmed eligible for the current deck format. Cards requiring review are excluded.'),
-      L('「같은 이름 묶기」는 이름마다 대표 판본 하나만 보여 줍니다. 다른 그림이나 판본을 고르려면 체크를 해제하세요. 「초기화」는 검색 조건을 모두 지웁니다.','One per name shows one printing per card name. Turn it off to choose alternate art or printings. Reset clears the search filters.')
+    step('eligibility',find,'library','.format-scope',L('덱 형식에 맞는 카드만 표시','Match cards to your deck format'),[
+      L('「스탠다드 카드만」을 켜면 현재 덱 형식에서 사용 가능으로 확인된 판본만 남습니다. 금지 카드와 확인이 필요한 카드는 제외됩니다.','Standard cards only keeps printings confirmed eligible for the current deck format. Banned cards and cards requiring review are excluded.'),
+      L('덱을 익스팬디드로 바꾸면 이 옵션과 결과도 익스팬디드 기준으로 바뀝니다. 체크를 끄면 모든 형식을 볼 수 있어요. 검색 조건을 초기화해도 이 옵션은 유지됩니다.','Changing the deck to Expanded updates this option and its results automatically. Uncheck it to browse all formats. Reset search keeps this option unchanged.')
     ]),
     step('add',find,'library','.result-add, #results',L('카드 추가와 드래그 앤 드롭','Add cards or drag them onto the deck'),[
       L('검색 결과 카드의 + 버튼을 누를 때마다 현재 덱에 1장씩 추가됩니다. 카드 그림을 누르면 상세 정보를 볼 수 있어요.','Each press of a card’s + button adds one copy to the current deck. Click the card image to inspect it.'),

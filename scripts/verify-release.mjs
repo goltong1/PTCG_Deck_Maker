@@ -9,12 +9,12 @@ const manifestName = 'RELEASE_MANIFEST.json';
 const releaseFiles = [
   'package.json', 'BUILD_INFO.json', '.github/workflows/deploy-pages.yml',
   'public/index.html', 'public/app.js', 'public/core.js', 'public/rules.js',
-  'public/recipe.js', 'public/theme-init.js', 'public/tutorial.js',
+  'public/recipe.js', 'public/theme-init.js', 'public/tutorial.js', 'public/catalog.js', 'public/catalog.css',
   'public/styles.css', 'public/pokemon-theme.css', 'public/portal-theme.css', 'public/tutorial.css',
   'public/data/cards.json', 'public/data/cards.json.gz', 'public/data/meta.json', 'public/data/example.json',
   'public/templates/recipe-template-2026.json', 'public/templates/recipe-template-2026.xlsx',
   'scripts/build.mjs', 'scripts/verify-build.mjs', 'scripts/verify-release.mjs', 'scripts/package-source.py',
-  'tests/deck.test.mjs', 'tests/formats-recipe.test.mjs', 'tests/tutorial.test.mjs'
+  'tests/deck.test.mjs', 'tests/formats-recipe.test.mjs', 'tests/tutorial.test.mjs', 'tests/catalog.test.mjs'
 ];
 
 function digest(bytes, name) {

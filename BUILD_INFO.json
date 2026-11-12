@@ -1,17 +1,17 @@
 {
   "name": "PTCG Canvas",
-  "packageVersion": "1.2.2",
-  "packagedDate": "2026-11-11",
+  "packageVersion": "1.3.0",
+  "packagedDate": "2026-11-12",
   "cardDataCommit": "18e0de2feb7a35ebe4296ede0ba6cc768961489b",
   "cardCount": 20323,
   "sets": 264,
   "packagingChanges": [
-    "Reproduced 12 passes and 8 failures by mixing v1.1.1 core/data with format/recipe tests",
-    "Full matched source, enriched card data, recipe templates and tutorial release",
-    "Added release checksums before CI tests, build and ZIP generation",
-    "Added explicit full-overwrite upgrade instructions; preserves existing .git and unrelated files"
+    "Resizable card catalog with remembered width and keyboard controls",
+    "Collapsible sorting and advanced filters; responsive card columns",
+    "Prominent default-on format scope following the active deck",
+    "Updated 23-step tutorial and full matched release checksums"
   ],
-  "uiVersion": "1.2.1",
+  "uiVersion": "1.3.0",
   "rulesReviewedAt": "2026-11-11",
-  "baseSourceCommit": "3f907cf742b34d22d18ca262faf6ff3e622d718d"
+  "baseSourceCommit": "a770307cac45dbc0aa8ea865f3d0d5b7fd0d70e0"
 }

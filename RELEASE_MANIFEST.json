@@ -1,17 +1,19 @@
 {
   "schemaVersion": 1,
-  "version": "1.2.2",
+  "version": "1.3.0",
   "files": {
-    "package.json": "fbe4849f932be352a364d8b1022fcc90d8e98f5bafeb42b9834634ae382d8962",
-    "BUILD_INFO.json": "c169fb529c8ecce397b66083b25fc96dc10afdd04915ba99eab97775b7bae7be",
+    "package.json": "350655bb1e31f8897ae5c4358a923f9fe8b814600a799d938f7b20ac160643fb",
+    "BUILD_INFO.json": "812cfb3d8cf5e5d7aae8a85bf8f3cf852a109cac564f830aabcc8074c5765e94",
     ".github/workflows/deploy-pages.yml": "19786c2c98d9a83bdfdc0172c5735e68eb9ce74b7f3791b2c6b2049d207d01d7",
-    "public/index.html": "afbe8151b489fa3666b48f819c2f2404916e95ea2fefae736b6b41a66b1d0756",
-    "public/app.js": "d5e1e3bf693a259a95e404486473b6f40be4c09f96ec3e4edb3ff4678fffaced",
+    "public/index.html": "ba1a82bfb424d6c8579e20279f66dc6c4c9b090e80dff10df605af2e9f0181a6",
+    "public/app.js": "84ffa63a81fe6ee236d0683079544c2dc6a206940eb9198c3b9fbd89478ce82a",
     "public/core.js": "1890a6c34387a0b4e9f1a83f237cc6e6bbd60e61536488bf6b34cb70f8ae00e7",
     "public/rules.js": "531d84b35aa9856066390928f03ba865534e75bb5b51d1506cbaccba6b3c5e9d",
     "public/recipe.js": "fd5e96b136b47fb287f62528edc8189f28ab2ba3bdfae9842304f625ab96b803",
     "public/theme-init.js": "e4381cfb77d8235e022f7bcf473122ce1c2f5b5b8b0812cc6ca35643bd19d948",
-    "public/tutorial.js": "b0f57e978419c26b8b0e8a20ca5d46ac2b7959fbb57034b9447917e8c64387b4",
+    "public/tutorial.js": "a04f7c134096d57335ed70131362b983ee26c6ef1842d3fc269869d6f93b9e54",
+    "public/catalog.js": "da9c86237ddab46dbdc822104112fc589267392b78a1af12cb05b8394508895b",
+    "public/catalog.css": "eb09ff4a2dba391935725929fcc0a7e7fed625d6308113152cf73454eeceb206",
     "public/styles.css": "220d6f276ea6638dbab5a3d0806d6ff0542d06272be214a4270a1fb2c4dfbf6c",
     "public/pokemon-theme.css": "10b1d3387e877003093073596621e88fc666d13a695640f5e2a03e88106d39e4",
     "public/portal-theme.css": "835f40f2b6db1c90f521e78b487bc3e039f8b9e264b135ac83c1c01864fb0861",
@@ -23,11 +25,12 @@
     "public/templates/recipe-template-2026.json": "87aac4f2de9d49fca951eb376bf92485875e02708c4310288be7f41c3881fa1f",
     "public/templates/recipe-template-2026.xlsx": "224dcbfd0d8a871b0850c873289c48fd03130b069738f1b9a93b45d4ce6a8b48",
     "scripts/build.mjs": "7a87aa66b1021f384b04237a4132a24e49d7d1a99b9d1e1391782abc3c7ff093",
-    "scripts/verify-build.mjs": "d1d6dbf0e4ea4582955f2514d6d2f0c3ebe5d3e8b25ef0c424a91d20a080098e",
-    "scripts/verify-release.mjs": "bd5571e0f404ad0184968b34247b468fb236bac840ad5d16e2df09c24529c084",
+    "scripts/verify-build.mjs": "4bb1bc62454a0857fe4094f511db0d8809935f6df5d673e86a0491ab9223fff8",
+    "scripts/verify-release.mjs": "d5d0edc9bab21510bc547d84c1295b2ae3dbdac04ad94824fba7f4a3460a4159",
     "scripts/package-source.py": "73f2fe6c7e6b0575060d4f03a0e8d519ed38d0b3aa4678188270092e2e795c1b",
     "tests/deck.test.mjs": "5ec9511b3cac70d9e8c039c5d99a0694cb084e949fed40191450ea35fb6b4873",
     "tests/formats-recipe.test.mjs": "d0a2d4296668ba6cceeeb3f4b273650461c170992f6c027d66bce5e65355df42",
-    "tests/tutorial.test.mjs": "d3a6427a1d54d19f435baca8b3fed4bab9c6914175385820b06a71131f8c9a36"
+    "tests/tutorial.test.mjs": "d3a6427a1d54d19f435baca8b3fed4bab9c6914175385820b06a71131f8c9a36",
+    "tests/catalog.test.mjs": "23515aa029fddc5598606e4ac22bdff22465af40dbebb55e3b22a83ad9033b19"
   }
 }
